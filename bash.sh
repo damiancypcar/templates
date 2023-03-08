@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # ----------------------------------------------------------
-# Author:       damiancypcar
-# Modified:     03.03.2023
-# Version:      1.0
-# Desc:         <description>
+# Author:          damiancypcar
+# Modified:        03.03.2023
+# Version:         1.0
+# Desc:            description
 # ----------------------------------------------------------
 # set -e           - immediately exit if any command has a non-zero exit status
 # set -u           - immediately exit if use any variable NOT previously defined
