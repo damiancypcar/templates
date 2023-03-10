@@ -11,8 +11,8 @@ REM %~f0   - fully qualified path name
 
 cls
 setlocal
-set title=Some title
-title %title% & echo %title%
+title %~nx0
+echo description
 echo.
 
 NET SESSION 1>NUL 2>NUL
