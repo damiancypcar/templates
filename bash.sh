@@ -14,8 +14,18 @@ set -euo pipefail
 
 VARIABLE="<var value>"
 
+# ROOT CHECK
 # shellcheck disable=SC2046
 if [ $(id -u) -ne 0 ]; then
     echo "You must be ROOT to run this script"
     exit 1
 fi
+
+# YES/NO ASK
+read -rp "Are you sure? (y/N) " yn
+yn=${yn:-n}
+case $yn in
+    [Yy]* ) run;;
+    [Nn]* ) echo "Exiting."; exit;;
+        * ) echo "Invalid response. Exiting."; exit 1;;
+esac
