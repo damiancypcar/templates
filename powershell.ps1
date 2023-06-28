@@ -8,6 +8,11 @@
 #   ^ - disable an unapproved verb. PSScriptAnalyzer notification
 
 # ROOT CHECK
+$ErrorActionPreference = "Stop";
+if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Error "This script must be executed as Administrator.";
+    exit 1;
+}
 
 
 # YES/NO ASK
