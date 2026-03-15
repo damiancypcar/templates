@@ -31,5 +31,9 @@ yn=${yn:-n}
 case $yn in
     [Yy]* ) run;;
     [Nn]* ) echo "Exiting."; exit;;
-        * ) echo "Invalid response. Exiting."; exit 1;;
+    * ) echo "Invalid response. Exiting."; exit 1;;
 esac
+
+# Ask Yes/No
+read -rp "Do you want to continue? (y/n) " answer
+if [ "$answer" != "y" ] && [ "$answer" != "Y" ]; then echo "Aborting."; return; fi
