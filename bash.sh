@@ -18,7 +18,14 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-# YES/NO ASK
+# Check user permission to use Docker
+if ! docker ps > /dev/null 2>&1; then
+    echo "User \"$(whoami)\" does not have permission to use Docker."
+    exit 1
+fi
+
+
+# Ask Yes/No default N
 read -rp "Are you sure? (y/N) " yn
 yn=${yn:-n}
 case $yn in
