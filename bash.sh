@@ -12,10 +12,9 @@
 set -euo pipefail
 
 
-# ROOT CHECK
-# shellcheck disable=SC2046
-if [ $(id -u) -ne 0 ]; then
-    echo "You must be ROOT to run this script"
+# Check root access
+if [ "$(id -u)" -ne 0 ]; then
+    echo; echo "This script must be run as root."
     exit 1
 fi
 
